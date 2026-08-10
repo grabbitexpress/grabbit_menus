@@ -31,7 +31,7 @@ const RESTAURANTS_DATA = [
     categoryLabel: "Supermarket & Groceries",
     location: "Mahogany Shopping Promenade, Pamplemousses",
     type: "pdf",
-    pdfUrl: "assets/menus/intermart-catalog.pdf",
+    pdfUrl: "assets/menus/INTERMART.pdf",
     rating: 4.9,
     eta: "20-35 min",
     tagline: "Fresh produce, daily essentials, snacks & imported goods",

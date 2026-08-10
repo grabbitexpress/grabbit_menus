@@ -2,7 +2,45 @@
  * GRABBIT EXPRESS - MENU HUB APPLICATION LOGIC
  */
 
+const WHATSAPP_INTRO = `Hey there! Welcome to Grabbit Express 🤗, Mauritius' first 100% electric on-demand delivery service.
+
+Our coverage areas are Pamplemousses, Long Mont, Arsenal, Triolet & Calebasses.
+
+If you need a delivery:
+📦 Detail your order
+📍 Preferred restaurant or mall
+
+If you need a trip:
+📍 Pickup point & drop-off point
+
+Our operational hours are:
+🕗 8am – 9am
+🕛 12pm – 2pm
+🕔 5pm – 8pm
+
+Our team will confirm your order shortly!
+
+Shops we currently deliver from:
+🍗 KFC Mahogany
+🥡 Pan Asian
+🛒 Intermart
+🥪 Eaters
+🍕 Pappagallo Pizza
+🍔 Burgery
+🍛 Mahek
+🥗 Manjo
+☕ Artisan Coffee
+🔌 Electronics Shop
+🍣 Sushi Park
+🌶️ Aromas of India
+🌮 Takos`;
+
 document.addEventListener('DOMContentLoaded', () => {
+  const heroWhatsappBtn = document.getElementById('heroWhatsappBtn');
+  if (heroWhatsappBtn) {
+    heroWhatsappBtn.href = `https://wa.me/23055198540?text=${encodeURIComponent(WHATSAPP_INTRO)}`;
+  }
+
   // State management
   let activeCategory = 'all';
   let searchQuery = '';
@@ -312,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (orderVenueName) orderVenueName.textContent = `Order from ${venue.name}`;
     
     // Prepare WhatsApp message
-    const msg = encodeURIComponent(`Hello Grabbit Express! I would like to order from ${venue.name} in Pamplemousses.`);
+    const msg = encodeURIComponent(`${WHATSAPP_INTRO}\n\n📦 My order: I'd like to order from ${venue.name} in ${venue.location}.`);
     if (orderWhatsappBtn) {
       orderWhatsappBtn.href = `https://wa.me/23055198540?text=${msg}`;
     }
