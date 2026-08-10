@@ -282,3 +282,13 @@ const CATEGORIES = [
   { id: "groceries", label: "Groceries", icon: "fa-cart-shopping" },
   { id: "retail", label: "Retail & Shops", icon: "fa-store" }
 ];
+
+const GRABBIT_WHATSAPP_NUMBER = "23055198540";
+
+const WHATSAPP_INTRO = `Hey there! Welcome to Grabbit Express, Mauritius' first 100% electric on-demand delivery service. What would you like to order? We're happy to grab it for you!`;
+
+// Node/serverless consumers (e.g. api/menu.js) can `require()` this file;
+// browsers loading it via <script> ignore this block since `module` is undefined there.
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { RESTAURANTS_DATA, CATEGORIES, GRABBIT_WHATSAPP_NUMBER, WHATSAPP_INTRO };
+}

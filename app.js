@@ -2,12 +2,10 @@
  * GRABBIT EXPRESS - MENU HUB APPLICATION LOGIC
  */
 
-const WHATSAPP_INTRO = `Hey there! Welcome to Grabbit Express, Mauritius' first 100% electric on-demand delivery service. What would you like to order? We're happy to grab it for you!`;
-
 document.addEventListener('DOMContentLoaded', () => {
   const heroWhatsappBtn = document.getElementById('heroWhatsappBtn');
   if (heroWhatsappBtn) {
-    heroWhatsappBtn.href = `https://wa.me/23055198540?text=${encodeURIComponent(WHATSAPP_INTRO)}`;
+    heroWhatsappBtn.href = `https://wa.me/${GRABBIT_WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_INTRO)}`;
   }
 
   // State management
@@ -321,10 +319,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Prepare WhatsApp message
     const msg = encodeURIComponent(`${WHATSAPP_INTRO}\n\nI'd like to order from ${venue.name} (${venue.location}).`);
     if (orderWhatsappBtn) {
-      orderWhatsappBtn.href = `https://wa.me/23055198540?text=${msg}`;
+      orderWhatsappBtn.href = `https://wa.me/${GRABBIT_WHATSAPP_NUMBER}?text=${msg}`;
     }
     if (orderCallBtn) {
-      orderCallBtn.href = `tel:+23055198540`;
+      orderCallBtn.href = `tel:+${GRABBIT_WHATSAPP_NUMBER}`;
     }
 
     orderModal.classList.add('active');
