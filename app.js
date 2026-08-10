@@ -333,10 +333,4 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.classList.remove('active');
     });
   }
-
-  // Toggle Owner Info Banner
-  window.dismissBanner = function() {
-    const banner = document.getElementById('ownerBanner');
-    if (banner) banner.style.display = 'none';
-  };
 });

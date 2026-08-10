@@ -666,57 +666,6 @@ button {
 }
 
 /* ============================================================
-   OWNER INSTRUCTION BANNER
-   ============================================================ */
-.owner-banner {
-  max-width: 1300px;
-  margin: 0 auto 30px;
-  padding: 0 40px;
-}
-
-.owner-banner-inner {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(21, 128, 61, 0.08));
-  border: 1px solid var(--border-green);
-  border-radius: var(--radius-md);
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.banner-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.banner-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(34, 197, 94, 0.2);
-  color: var(--green-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
-
-.banner-title {
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--text-main);
-  margin-bottom: 2px;
-}
-
-.banner-sub {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-/* ============================================================
    MODALS & LIGHTBOX
    ============================================================ */
 .modal-overlay {
@@ -1026,12 +975,5 @@ button {
   }
   .restaurants-grid {
     grid-template-columns: 1fr;
-  }
-  .owner-banner {
-    padding: 0 20px;
-  }
-  .owner-banner-inner {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
