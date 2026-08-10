@@ -187,13 +187,17 @@ const RESTAURANTS_DATA = [
     location: "Mahogany Promenade, Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1200&q=80"
+      "assets/photos/aromas-of-india/1.jpg",
+      "assets/photos/aromas-of-india/3.jpg",
+      "assets/photos/aromas-of-india/4.jpg",
+      "assets/photos/aromas-of-india/5.jpg",
+      "assets/photos/aromas-of-india/2.jpg",
+      "assets/photos/aromas-of-india/6.jpg"
     ],
     rating: 4.9,
     eta: "25-35 min",
     tagline: "Authentic Indian Curries, Paneer Tikka, Samosas & Thalis",
-    coverImage: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80",
+    coverImage: "assets/photos/aromas-of-india/1.jpg",
     phone: "+23055198540",
     badge: "Photo Menu",
     description: "Royal Indian recipes, vegetarian options, crispy tikka starters, and rich curry sauces."
@@ -225,13 +229,17 @@ const RESTAURANTS_DATA = [
     location: "Mahogany Promenade, Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80"
+      "assets/photos/artisan-coffee/1.png",
+      "assets/photos/artisan-coffee/2.png",
+      "assets/photos/artisan-coffee/3.png",
+      "assets/photos/artisan-coffee/4.png",
+      "assets/photos/artisan-coffee/5.png",
+      "assets/photos/artisan-coffee/6.jpg"
     ],
     rating: 4.9,
     eta: "10-20 min",
     tagline: "Specialty Espresso, Fresh Croissants, Pastries & Iced Matcha",
-    coverImage: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80",
+    coverImage: "assets/photos/artisan-coffee/1.png",
     phone: "+23055198540",
     badge: "Photo Menu",
     description: "Freshly roasted coffee beans, artisanal French croissants, cakes, and refreshing iced brews."

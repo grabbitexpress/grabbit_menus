@@ -308,7 +308,7 @@ button {
 .hero-badge,
 .hero-title,
 .hero-sub {
-  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .hero-badge { animation-delay: 0.05s; }
 .hero-title { animation-delay: 0.15s; }
@@ -478,7 +478,7 @@ button {
   backdrop-filter: blur(12px);
   position: relative;
   opacity: 0;
-  animation: cardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation: cardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: calc(var(--i, 0) * 60ms);
 }
 
