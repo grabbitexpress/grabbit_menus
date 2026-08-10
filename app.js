@@ -8,6 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
     heroWhatsappBtn.href = `https://wa.me/${GRABBIT_WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_INTRO)}`;
   }
 
+  // Animate the sustainability impact numbers counting up from 0
+  document.querySelectorAll('.impact-number').forEach((el) => {
+    const target = parseInt(el.dataset.target, 10) || 0;
+    const suffix = el.dataset.suffix || '';
+    const duration = 1600;
+    const startTime = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      el.textContent = value.toLocaleString('en-US') + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+
   // State management
   let activeCategory = 'all';
   let searchQuery = '';

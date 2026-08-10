@@ -237,10 +237,42 @@ button {
    HERO SECTION
    ============================================================ */
 .hero {
-  padding: 60px 40px 40px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  isolation: isolate;
+}
+
+.hero-bg-collage {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: flex;
+  gap: 2px;
+}
+
+.hero-bg-collage img {
+  flex: 1;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.15) brightness(0.65);
+  opacity: 0.55;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(11, 15, 13, 0.35) 0%, rgba(11, 15, 13, 0.75) 55%, var(--bg-dark) 100%),
+    linear-gradient(180deg, rgba(11, 15, 13, 0.55) 0%, rgba(11, 15, 13, 0.4) 40%, var(--bg-dark) 100%);
+}
+
+.hero-content {
+  padding: 90px 40px 50px;
   max-width: 1300px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .hero-badge {
@@ -317,6 +349,73 @@ button {
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   SUSTAINABILITY / CARBON OFFSET IMPACT STRIP
+   ============================================================ */
+.impact-stats {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 22px 10px;
+  border-top: 1px solid var(--border-green);
+  border-bottom: 1px solid var(--border-green);
+  background: rgba(18, 24, 21, 0.4);
+  backdrop-filter: blur(8px);
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.35s;
+}
+
+.impact-stat {
+  flex: 1;
+  padding: 0 20px;
+  border-left: 1px solid var(--border-light);
+}
+
+.impact-stat:first-child {
+  border-left: none;
+}
+
+.impact-stat i {
+  color: var(--green-primary);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.impact-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.impact-label {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  font-weight: 600;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 640px) {
+  .impact-stats {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .impact-stat {
+    border-left: none;
+    border-top: 1px solid var(--border-light);
+    padding: 14px 10px 0;
+  }
+  .impact-stat:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
 }
 
 /* ============================================================
@@ -964,8 +1063,8 @@ button {
   .navbar {
     padding: 14px 20px;
   }
-  .hero {
-    padding: 40px 20px 24px;
+  .hero-content {
+    padding: 60px 20px 30px;
   }
   .controls-wrap {
     padding: 0 20px;
