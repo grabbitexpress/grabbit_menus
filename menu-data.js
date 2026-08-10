@@ -149,16 +149,17 @@ const RESTAURANTS_DATA = [
     location: "Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+      "assets/photos/eaters/boulettes.jpg",
+      "assets/photos/eaters/noodles_fried.jpg",
+      "assets/photos/eaters/noodles_boiled.jpg"
     ],
     rating: 4.6,
     eta: "20-30 min",
-    tagline: "Grilled Paninis, Loaded Subs, Bowls & Comfort Bites",
-    coverImage: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
+    tagline: "Boulette Soup, Fried & Boiled Noodles, Mauritian Street Food",
+    coverImage: "assets/photos/eaters/boulettes.jpg",
     phone: "+23055198540",
     badge: "Photo Menu",
-    description: "Casual dining favorite serving hearty sandwiches, grilled wraps, and quick bites."
+    description: "Mauritian street-food favorite — steaming boulette dumpling soup, mine frite (fried noodles) and mine bouilli (boiled noodles), made fresh to order."
   },
   {
     id: "mahek",
@@ -210,16 +211,22 @@ const RESTAURANTS_DATA = [
     location: "Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      "assets/photos/manjoo/8.jpg",
+      "assets/photos/manjoo/5.jpg",
+      "assets/photos/manjoo/6.jpg",
+      "assets/photos/manjoo/7.jpg",
+      "assets/photos/manjoo/3.jpg",
+      "assets/photos/manjoo/1.jpg",
+      "assets/photos/manjoo/2.jpg",
+      "assets/photos/manjoo/4.jpg"
     ],
     rating: 4.7,
     eta: "20-30 min",
-    tagline: "Curtains, Rugs, Bedding, Kitchen & Household Accessories",
-    coverImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
+    tagline: "Decor, Fragrances, Table & Kitchen Essentials for the Home",
+    coverImage: "assets/photos/manjoo/8.jpg",
     phone: "+23055198540",
     badge: "Photo Catalog",
-    description: "Mauritius' trusted home décor & household store since 1919 — curtains, rugs, bedding, kitchen & bathroom accessories. Send us your list and we grab it for you!"
+    description: "Mauritius' trusted home décor & household store since 1919 — tablecloths, food containers, clocks, pencil holders, artificial flowers, fragrance sprays & decor, plus curtains, rugs, bedding & kitchenware. Send us your list and we grab it for you!"
   },
   {
     id: "artisan-coffee",
