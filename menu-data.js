@@ -20,7 +20,7 @@ const RESTAURANTS_DATA = [
     eta: "15-25 min",
     tagline: "Finger Lickin' Good Chicken, Buckets, Wraps & Zinger Burgers",
     coverImage: "https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Official Link",
     description: "Order your favorite KFC meals through Grabbit Express. Click to view the live online menu."
   },
@@ -36,7 +36,7 @@ const RESTAURANTS_DATA = [
     eta: "20-35 min",
     tagline: "Fresh produce, daily essentials, snacks & imported goods",
     coverImage: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "PDF Catalog",
     description: "Browse the weekly Intermart promotional catalog & grocery list. Send us your items and we grab them for you!"
   },
@@ -55,7 +55,7 @@ const RESTAURANTS_DATA = [
     eta: "20-30 min",
     tagline: "Authentic Wok Noodle Bowls, Dim Sum & Thai Curries",
     coverImage: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Flavors from across Asia — pad thai, ramen, steamed dumplings, and sizzling Szechuan dishes."
   },
@@ -74,7 +74,7 @@ const RESTAURANTS_DATA = [
     eta: "25-35 min",
     tagline: "Fresh Salmon Nigiri, Dragon Rolls, Tempura & Sashimi Platters",
     coverImage: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Premium handcrafted Japanese sushi, sashimi boxes, and maki rolls delivered fresh to your door."
   },
@@ -93,7 +93,7 @@ const RESTAURANTS_DATA = [
     eta: "20-30 min",
     tagline: "Wood-Fired Neapolitan Pizza, Fresh Pasta & Garlic Bread",
     coverImage: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Crispy crusts, rich mozzarella, artisanal marinara sauce, and savory Italian specialties."
   },
@@ -112,7 +112,7 @@ const RESTAURANTS_DATA = [
     eta: "15-25 min",
     tagline: "Smash Burgers, Truffle Fries, Crispy Chicken & Thick Milkshakes",
     coverImage: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Juicy 100% Angus beef patties smashed to perfection, loaded fries, and craft milkshakes."
   },
@@ -131,7 +131,7 @@ const RESTAURANTS_DATA = [
     eta: "15-25 min",
     tagline: "Loaded Burritos, Cheesy Quesadillas, Tacos & Nachos",
     coverImage: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Bold Mexican flavors — birria tacos, loaded burritos, guacamole, and crispy churros."
   },
@@ -150,7 +150,7 @@ const RESTAURANTS_DATA = [
     eta: "20-30 min",
     tagline: "Grilled Paninis, Loaded Subs, Bowls & Comfort Bites",
     coverImage: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Casual dining favorite serving hearty sandwiches, grilled wraps, and quick bites."
   },
@@ -169,7 +169,7 @@ const RESTAURANTS_DATA = [
     eta: "25-35 min",
     tagline: "Rich Butter Chicken, Garlic Naan & Fragrant Dum Biryanis",
     coverImage: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Classic North and South Indian specialties prepared with aromatic spices and clay tandoor ovens."
   },
@@ -188,7 +188,7 @@ const RESTAURANTS_DATA = [
     eta: "25-35 min",
     tagline: "Authentic Indian Curries, Paneer Tikka, Samosas & Thalis",
     coverImage: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Royal Indian recipes, vegetarian options, crispy tikka starters, and rich curry sauces."
   },
@@ -207,7 +207,7 @@ const RESTAURANTS_DATA = [
     eta: "15-25 min",
     tagline: "Mauritian Street Eats, Fried Noodle Bowls & Fresh Salad Wraps",
     coverImage: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Delicious local fusion meals, fresh healthy bowls, and island comfort dishes."
   },
@@ -226,7 +226,7 @@ const RESTAURANTS_DATA = [
     eta: "10-20 min",
     tagline: "Specialty Espresso, Fresh Croissants, Pastries & Iced Matcha",
     coverImage: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Menu",
     description: "Freshly roasted coffee beans, artisanal French croissants, cakes, and refreshing iced brews."
   },
@@ -245,7 +245,7 @@ const RESTAURANTS_DATA = [
     eta: "20-30 min",
     tagline: "Chargers, Power Banks, Earbuds, Cables & Tech Accessories",
     coverImage: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
-    phone: "+23058000000",
+    phone: "+23055198540",
     badge: "Photo Catalog",
     description: "Need phone chargers, adapters, headphones or mobile gear urgently? We pick up and deliver same-day."
   }

@@ -314,10 +314,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Prepare WhatsApp message
     const msg = encodeURIComponent(`Hello Grabbit Express! I would like to order from ${venue.name} in Pamplemousses.`);
     if (orderWhatsappBtn) {
-      orderWhatsappBtn.href = `https://wa.me/23058000000?text=${msg}`;
+      orderWhatsappBtn.href = `https://wa.me/23055198540?text=${msg}`;
     }
     if (orderCallBtn) {
-      orderCallBtn.href = `tel:+23058000000`;
+      orderCallBtn.href = `tel:+23055198540`;
     }
 
     orderModal.classList.add('active');
