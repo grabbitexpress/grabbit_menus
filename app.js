@@ -28,7 +28,7 @@ Shops we currently deliver from:
 🍕 Pappagallo Pizza
 🍔 Burgery
 🍛 Mahek
-🥗 Manjo
+🏠 Manjoo
 ☕ Artisan Coffee
 🔌 Electronics Shop
 🍣 Sushi Park
@@ -131,8 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    restaurantsGrid.innerHTML = filtered.map(item => `
-      <div class="card" data-id="${item.id}">
+    restaurantsGrid.innerHTML = filtered.map((item, idx) => `
+      <div class="card" data-id="${item.id}" style="--i:${idx}">
         <div class="card-img-wrap">
           <img src="${item.coverImage}" alt="${item.name}" class="card-img" loading="lazy" />
           <span class="card-badge">${item.badge}</span>
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getMenuBtnText(type) {
     if (type === 'link') return 'Live Menu';
-    if (type === 'pdf') return 'PDF Menu';
+    if (type === 'pdf') return 'View Catalogue';
     return 'View Menu';
   }
 

@@ -19,7 +19,7 @@ const RESTAURANTS_DATA = [
     rating: 4.8,
     eta: "15-25 min",
     tagline: "Finger Lickin' Good Chicken, Buckets, Wraps & Zinger Burgers",
-    coverImage: "https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?auto=format&fit=crop&w=800&q=80",
+    coverImage: "assets/photos/kfc-mahogany/2.png",
     phone: "+23055198540",
     badge: "Official Link",
     description: "Order your favorite KFC meals through Grabbit Express. Click to view the live online menu."
@@ -67,13 +67,16 @@ const RESTAURANTS_DATA = [
     location: "Mahogany Promenade, Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=1200&q=80"
+      "assets/photos/sushi-park/1.png",
+      "assets/photos/sushi-park/2.png",
+      "assets/photos/sushi-park/3.webp",
+      "assets/photos/sushi-park/4.webp",
+      "assets/photos/sushi-park/5.webp"
     ],
     rating: 4.9,
     eta: "25-35 min",
     tagline: "Fresh Salmon Nigiri, Dragon Rolls, Tempura & Sashimi Platters",
-    coverImage: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80",
+    coverImage: "assets/photos/sushi-park/1.png",
     phone: "+23055198540",
     badge: "Photo Menu",
     description: "Premium handcrafted Japanese sushi, sashimi boxes, and maki rolls delivered fresh to your door."
@@ -86,13 +89,15 @@ const RESTAURANTS_DATA = [
     location: "Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1200&q=80"
+      "assets/photos/pappagallo-pizza/1.jpg",
+      "assets/photos/pappagallo-pizza/2.jpg",
+      "assets/photos/pappagallo-pizza/3.jpg",
+      "assets/photos/pappagallo-pizza/4.jpg"
     ],
     rating: 4.8,
     eta: "20-30 min",
     tagline: "Wood-Fired Neapolitan Pizza, Fresh Pasta & Garlic Bread",
-    coverImage: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80",
+    coverImage: "assets/photos/pappagallo-pizza/1.jpg",
     phone: "+23055198540",
     badge: "Photo Menu",
     description: "Crispy crusts, rich mozzarella, artisanal marinara sauce, and savory Italian specialties."
@@ -105,13 +110,13 @@ const RESTAURANTS_DATA = [
     location: "Mahogany Promenade, Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=1200&q=80"
+      "assets/photos/burgery/2.webp",
+      "assets/photos/burgery/1.webp"
     ],
     rating: 4.8,
     eta: "15-25 min",
     tagline: "Smash Burgers, Truffle Fries, Crispy Chicken & Thick Milkshakes",
-    coverImage: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+    coverImage: "assets/photos/burgery/2.webp",
     phone: "+23055198540",
     badge: "Photo Menu",
     description: "Juicy 100% Angus beef patties smashed to perfection, loaded fries, and craft milkshakes."
@@ -124,13 +129,14 @@ const RESTAURANTS_DATA = [
     location: "Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1200&q=80"
+      "assets/photos/takos/1.jpg",
+      "assets/photos/takos/2.jpg",
+      "assets/photos/takos/3.jpg"
     ],
     rating: 4.6,
     eta: "15-25 min",
     tagline: "Loaded Burritos, Cheesy Quesadillas, Tacos & Nachos",
-    coverImage: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
+    coverImage: "assets/photos/takos/1.jpg",
     phone: "+23055198540",
     badge: "Photo Menu",
     description: "Bold Mexican flavors — birria tacos, loaded burritos, guacamole, and crispy churros."
@@ -193,23 +199,23 @@ const RESTAURANTS_DATA = [
     description: "Royal Indian recipes, vegetarian options, crispy tikka starters, and rich curry sauces."
   },
   {
-    id: "manjo",
-    name: "Manjo",
-    category: "fast-food",
-    categoryLabel: "Local & Fusion",
+    id: "manjoo",
+    name: "Manjoo",
+    category: "retail",
+    categoryLabel: "Home Décor & Household",
     location: "Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
     ],
     rating: 4.7,
-    eta: "15-25 min",
-    tagline: "Mauritian Street Eats, Fried Noodle Bowls & Fresh Salad Wraps",
-    coverImage: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
+    eta: "20-30 min",
+    tagline: "Curtains, Rugs, Bedding, Kitchen & Household Accessories",
+    coverImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
     phone: "+23055198540",
-    badge: "Photo Menu",
-    description: "Delicious local fusion meals, fresh healthy bowls, and island comfort dishes."
+    badge: "Photo Catalog",
+    description: "Mauritius' trusted home décor & household store since 1919 — curtains, rugs, bedding, kitchen & bathroom accessories. Send us your list and we grab it for you!"
   },
   {
     id: "artisan-coffee",
@@ -259,5 +265,5 @@ const CATEGORIES = [
   { id: "indian", label: "Indian & Tandoor", icon: "fa-pepper-hot" },
   { id: "cafe", label: "Cafe & Bakery", icon: "fa-mug-hot" },
   { id: "groceries", label: "Groceries", icon: "fa-cart-shopping" },
-  { id: "retail", label: "Electronics & Tech", icon: "fa-plug" }
+  { id: "retail", label: "Retail & Shops", icon: "fa-store" }
 ];
