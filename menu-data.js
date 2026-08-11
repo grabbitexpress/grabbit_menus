@@ -2,9 +2,13 @@
  * GRABBIT EXPRESS - Pamplemousses Menu Directory Data
  * 
  * Instructions for updating menus:
- * - For KFC Mahogany (or external links): set type: "link", and update the `link` property.
+ * - For external links only (no photos): set type: "link", and update the `link` property.
  * - For Intermart (or PDF files): set type: "pdf", and update the `pdfUrl` property.
  * - For Restaurants with Picture Menus: set type: "images", and update the `images` array with image paths.
+ *   Each entry in `images` can be a plain string path, or an object { src, caption } to show a
+ *   caption under the photo in the gallery (and on swipe) so customers know what dish it is.
+ * - To also offer an external live menu alongside photos (e.g. KFC), keep type: "images" and add
+ *   a top-level `link` property — a second "Live Menu" button appears on the card automatically.
  */
 
 const RESTAURANTS_DATA = [
@@ -14,15 +18,24 @@ const RESTAURANTS_DATA = [
     category: "fast-food",
     categoryLabel: "Fast Food",
     location: "Mahogany Shopping Promenade, Pamplemousses",
-    type: "link",
+    type: "images",
+    images: [
+      { src: "assets/photos/kfc-mahogany/1.png", caption: "Crispy Chicken Zinger Burger" },
+      { src: "assets/photos/kfc-mahogany/2.png", caption: "Chicken & Fries Bucket" },
+      { src: "assets/photos/kfc-mahogany/3.png", caption: "2pc Chicken Meal with Fries & Drink" },
+      { src: "assets/photos/kfc-mahogany/4.png", caption: "Crispy Chicken Fillet Wrap" },
+      { src: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=1200&q=80", caption: "Crispy Chicken Strips & Dip" },
+      { src: "https://images.unsplash.com/photo-1566918214014-a3b3e0132267?auto=format&fit=crop&w=1200&q=80", caption: "Golden Fried Chicken" },
+      { src: "https://images.unsplash.com/photo-1629257657047-9b40cd435eb0?auto=format&fit=crop&w=1200&q=80", caption: "Ice-Cold Soft Drink" }
+    ],
     link: "https://kfc.mu/menu",
     rating: 4.8,
     eta: "15-25 min",
     tagline: "Finger Lickin' Good Chicken, Buckets, Wraps & Zinger Burgers",
     coverImage: "assets/photos/kfc-mahogany/2.png",
     phone: "+23055198540",
-    badge: "Official Link",
-    description: "Order your favorite KFC meals through Grabbit Express. Click to view the live online menu."
+    badge: "Photo & Live Menu",
+    description: "Order your favorite KFC meals through Grabbit Express. Browse the photo menu or open the live online menu."
   },
   {
     id: "intermart",
@@ -48,16 +61,21 @@ const RESTAURANTS_DATA = [
     location: "Mahogany Promenade, Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=1200&q=80"
+      // Once assets/photos/pan-asian/1.jpg (Noodles Menu board) exists, add it back here as the first entry.
+      { src: "https://images.unsplash.com/photo-1621515554656-3da68ba128b1?auto=format&fit=crop&w=1200&q=80", caption: "Fried Noodles" },
+      // Once assets/photos/pan-asian/2.jpg (Momo Menu board) exists, add it back here.
+      { src: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=1200&q=80", caption: "Chicken Momo Dumplings" },
+      // Once assets/photos/pan-asian/3.jpg (Chicken/Lamb/Prawns Meal board) exists, add it back here.
+      { src: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=1200&q=80", caption: "Schezwan Fried Rice with Fried Egg" },
+      { src: "https://images.unsplash.com/photo-1707056503922-91c9ebaf0774?auto=format&fit=crop&w=1200&q=80", caption: "Wok-Fried Chicken & Vegetables" }
     ],
     rating: 4.7,
     eta: "20-30 min",
-    tagline: "Authentic Wok Noodle Bowls, Dim Sum & Thai Curries",
-    coverImage: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80",
+    tagline: "Schezwan Noodles, Chicken Momos & Wok Meals with Fried Egg",
+    coverImage: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80",
     phone: "+23055198540",
     badge: "Photo Menu",
-    description: "Flavors from across Asia — pad thai, ramen, steamed dumplings, and sizzling Szechuan dishes."
+    description: "Steaming Schezwan, Cantonese & Vietnamese noodle bowls, hand-folded chicken, lamb & veggie momos, and hearty wok meals served over rice or noodles with a fried egg on top."
   },
   {
     id: "sushi-park",
@@ -110,33 +128,38 @@ const RESTAURANTS_DATA = [
     location: "Mahogany Promenade, Pamplemousses",
     type: "images",
     images: [
-      "assets/photos/burgery/2.webp",
-      "assets/photos/burgery/1.webp"
+      { src: "assets/photos/burgery/2.webp", caption: "Premium Limited Edition — Wagyu & Angus Burgers" },
+      { src: "assets/photos/burgery/1.webp", caption: "Burger Menu — Flavours & Prices" },
+      { src: "assets/photos/burgery/4.webp", caption: "Pasta La Vista — Tagliatelle, Penne & Spaghetti" },
+      { src: "assets/photos/burgery/3.webp", caption: "Drinks Menu — Mocktails & Mojitos" },
+      { src: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=1200&q=80", caption: "Smash Cheeseburger" },
+      { src: "https://images.unsplash.com/photo-1598679253544-2c97992403ea?auto=format&fit=crop&w=1200&q=80", caption: "Crispy Fries" },
+      { src: "https://images.unsplash.com/photo-1653085315536-1379bc836161?auto=format&fit=crop&w=1200&q=80", caption: "Thick Milkshake" }
     ],
     rating: 4.8,
     eta: "15-25 min",
-    tagline: "Smash Burgers, Truffle Fries, Crispy Chicken & Thick Milkshakes",
+    tagline: "Smash Burgers, Pasta La Vista, Truffle Fries & Thick Milkshakes",
     coverImage: "assets/photos/burgery/2.webp",
     phone: "+23055198540",
     badge: "Photo Menu",
-    description: "Juicy 100% Angus beef patties smashed to perfection, loaded fries, and craft milkshakes."
+    description: "Juicy 100% Angus & Wagyu beef patties smashed to perfection, creamy Pasta La Vista, loaded truffle fries, and thick craft milkshakes."
   },
   {
     id: "takos",
-    name: "Takos",
+    name: "Tacos",
     category: "fast-food",
     categoryLabel: "Mexican & Tacos",
     location: "Pamplemousses",
     type: "images",
     images: [
-      "assets/photos/takos/1.jpg",
-      "assets/photos/takos/2.jpg",
-      "assets/photos/takos/3.jpg"
+      { src: "https://images.unsplash.com/photo-1731090389603-d63060ee08a6?auto=format&fit=crop&w=1200&q=80", caption: "Loaded Burrito" },
+      { src: "https://images.unsplash.com/photo-1609530127564-bee93ebe1c9e?auto=format&fit=crop&w=1200&q=80", caption: "Cheesy Loaded Fries" },
+      { src: "https://images.unsplash.com/photo-1671572579845-52270341950f?auto=format&fit=crop&w=1200&q=80", caption: "Loaded Wrap" }
     ],
     rating: 4.6,
     eta: "15-25 min",
     tagline: "Loaded Burritos, Cheesy Quesadillas, Tacos & Nachos",
-    coverImage: "assets/photos/takos/1.jpg",
+    coverImage: "https://images.unsplash.com/photo-1731090389603-d63060ee08a6?auto=format&fit=crop&w=800&q=80",
     phone: "+23055198540",
     badge: "Photo Menu",
     description: "Bold Mexican flavors — birria tacos, loaded burritos, guacamole, and crispy churros."
@@ -169,13 +192,14 @@ const RESTAURANTS_DATA = [
     location: "Pamplemousses",
     type: "images",
     images: [
-      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=1200&q=80"
+      { src: "https://images.unsplash.com/photo-1705174427925-744646e72117?auto=format&fit=crop&w=1200&q=80", caption: "Butter Chicken" },
+      { src: "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=1200&q=80", caption: "Fragrant Dum Biryani" },
+      { src: "https://images.unsplash.com/photo-1697155406014-04dc649b0953?auto=format&fit=crop&w=1200&q=80", caption: "Garlic Naan" }
     ],
     rating: 4.8,
     eta: "25-35 min",
     tagline: "Rich Butter Chicken, Garlic Naan & Fragrant Dum Biryanis",
-    coverImage: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=800&q=80",
+    coverImage: "https://images.unsplash.com/photo-1705174427925-744646e72117?auto=format&fit=crop&w=800&q=80",
     phone: "+23055198540",
     badge: "Photo Menu",
     description: "Classic North and South Indian specialties prepared with aromatic spices and clay tandoor ovens."
@@ -189,11 +213,7 @@ const RESTAURANTS_DATA = [
     type: "images",
     images: [
       "assets/photos/aromas-of-india/1.jpg",
-      "assets/photos/aromas-of-india/3.jpg",
-      "assets/photos/aromas-of-india/4.jpg",
-      "assets/photos/aromas-of-india/5.jpg",
-      "assets/photos/aromas-of-india/2.jpg",
-      "assets/photos/aromas-of-india/6.jpg"
+      "assets/photos/aromas-of-india/2.jpg"
     ],
     rating: 4.9,
     eta: "25-35 min",
@@ -250,25 +270,6 @@ const RESTAURANTS_DATA = [
     phone: "+23055198540",
     badge: "Photo Menu",
     description: "Freshly roasted coffee beans, artisanal French croissants, cakes, and refreshing iced brews."
-  },
-  {
-    id: "electronics-shop",
-    name: "Electronics Shop",
-    category: "retail",
-    categoryLabel: "Tech & Accessories",
-    location: "Mahogany Promenade, Pamplemousses",
-    type: "images",
-    images: [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1200&q=80"
-    ],
-    rating: 4.8,
-    eta: "20-30 min",
-    tagline: "Chargers, Power Banks, Earbuds, Cables & Tech Accessories",
-    coverImage: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
-    phone: "+23055198540",
-    badge: "Photo Catalog",
-    description: "Need phone chargers, adapters, headphones or mobile gear urgently? We pick up and deliver same-day."
   }
 ];
 

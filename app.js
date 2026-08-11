@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxVenueName = document.getElementById('lightboxVenueName');
   const lightboxCounter = document.getElementById('lightboxCounter');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxStage = document.getElementById('lightboxStage');
   const lightboxThumbs = document.getElementById('lightboxThumbs');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
@@ -115,7 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    restaurantsGrid.innerHTML = filtered.map((item, idx) => `
+    restaurantsGrid.innerHTML = filtered.map((item, idx) => {
+      const hasLiveMenu = Boolean(item.link) && item.type !== 'link';
+      return `
       <div class="card" data-id="${item.id}" style="--i:${idx}">
         <div class="card-img-wrap">
           <img src="${item.coverImage}" alt="${item.name}" class="card-img" loading="lazy" />
@@ -130,11 +134,16 @@ document.addEventListener('DOMContentLoaded', () => {
             <i class="fa-solid fa-location-dot" style="color: var(--green-primary);"></i>
             <span>${item.location}</span>
           </div>
-          <div class="card-actions">
+          <div class="card-actions ${hasLiveMenu ? 'card-actions-triple' : ''}">
             <button class="btn-card-menu" onclick="handleViewMenu('${item.id}')">
               <i class="fa-solid ${getMenuBtnIcon(item.type)}"></i>
               <span>${getMenuBtnText(item.type)}</span>
             </button>
+            ${hasLiveMenu ? `
+            <button class="btn-card-order" onclick="window.open('${item.link}', '_blank')" title="View live ${item.name} menu">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>Live Menu</span>
+            </button>` : ''}
             <button class="btn-card-order" onclick="handleOrderModal('${item.id}')">
               <i class="fa-brands fa-whatsapp"></i>
               <span>Order</span>
@@ -142,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 
   function getMenuBtnIcon(type) {
@@ -195,7 +205,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lightbox navigation
     if (prevBtn) prevBtn.addEventListener('click', navigatePrev);
     if (nextBtn) nextBtn.addEventListener('click', navigateNext);
-    
+
+    // Swipe navigation (touch devices)
+    if (lightboxStage) {
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      lightboxStage.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+      }, { passive: true });
+
+      lightboxStage.addEventListener('touchend', (e) => {
+        const deltaX = e.changedTouches[0].clientX - touchStartX;
+        const deltaY = e.changedTouches[0].clientY - touchStartY;
+        const SWIPE_THRESHOLD = 40;
+        if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (deltaX < 0) navigateNext();
+          else navigatePrev();
+        }
+      }, { passive: true });
+    }
+
     // Zoom controls
     if (zoomInBtn) {
       zoomInBtn.addEventListener('click', () => {
@@ -260,11 +291,26 @@ document.addEventListener('DOMContentLoaded', () => {
     imageModal.classList.add('active');
   }
 
+  // Image entries may be a plain path string, or { src, caption } to label the dish
+  function getImageSrc(img) {
+    return typeof img === 'string' ? img : img.src;
+  }
+
+  function getImageCaption(img) {
+    return typeof img === 'string' ? '' : (img.caption || '');
+  }
+
   function updateLightboxStage() {
     if (!activeLightboxImages.length) return;
-    lightboxImg.src = activeLightboxImages[currentImageIndex];
+    const current = activeLightboxImages[currentImageIndex];
+    lightboxImg.src = getImageSrc(current);
     if (lightboxCounter) {
       lightboxCounter.textContent = `${currentImageIndex + 1} / ${activeLightboxImages.length}`;
+    }
+    if (lightboxCaption) {
+      const caption = getImageCaption(current);
+      lightboxCaption.textContent = caption;
+      lightboxCaption.style.display = caption ? 'block' : 'none';
     }
     applyZoom();
     updateThumbActiveState();
@@ -274,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!lightboxThumbs) return;
     lightboxThumbs.innerHTML = activeLightboxImages.map((img, idx) => `
       <div class="thumb-item ${idx === currentImageIndex ? 'active' : ''}" onclick="selectThumb(${idx})">
-        <img src="${img}" alt="Menu Page ${idx + 1}" />
+        <img src="${getImageSrc(img)}" alt="${getImageCaption(img) || `Menu Page ${idx + 1}`}" />
       </div>
     `).join('');
   }

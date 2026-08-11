@@ -768,6 +768,22 @@ button {
   border-color: var(--text-muted);
 }
 
+.card-actions-triple {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card-actions-triple .btn-card-menu,
+.card-actions-triple .btn-card-order {
+  font-size: 0.76rem;
+  padding: 9px 6px;
+  gap: 4px;
+}
+
+.card-actions-triple .btn-card-menu i,
+.card-actions-triple .btn-card-order i {
+  font-size: 0.85rem;
+}
+
 /* ============================================================
    MODALS & LIGHTBOX
    ============================================================ */
@@ -912,6 +928,25 @@ button {
 
 .lightbox-nav-btn.prev { left: 16px; }
 .lightbox-nav-btn.next { right: 16px; }
+
+.lightbox-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  max-width: calc(100% - 96px);
+  padding: 8px 18px;
+  background: rgba(6, 9, 7, 0.78);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+  display: none;
+}
 
 .lightbox-thumbs {
   display: flex;
