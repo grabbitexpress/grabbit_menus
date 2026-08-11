@@ -43,7 +43,7 @@ const RESTAURANTS_DATA = [
   },
   {
     id: "intermart",
-    name: "Intermart Express",
+    name: "Intermart",
     logo: "assets/logos/intermart.jpg",
     category: "groceries",
     categoryLabel: "Supermarket & Groceries",

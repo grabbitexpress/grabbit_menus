@@ -115,7 +115,7 @@ module.exports = (req, res) => {
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
@@ -130,7 +130,7 @@ module.exports = (req, res) => {
     </div>
   </header>
 
-  <main class="menu-page">
+  <main class="menu-page${venue.type === "pdf" ? " menu-page-wide" : ""}">
     <div class="menu-page-head">
       ${venue.logo ? `<img src="${escapeHtml(toAbsoluteUrl(venue.logo, baseUrl))}" alt="${escapeHtml(venue.name)} logo" class="menu-page-logo" />` : ''}
       <div class="menu-page-cat">${escapeHtml(venue.categoryLabel)}</div>

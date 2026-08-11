@@ -3,9 +3,9 @@
    ============================================================ */
 
 :root {
-  --bg-dark: #0B0F0D;
-  --bg-card: rgba(18, 24, 21, 0.75);
-  --bg-card-hover: rgba(26, 36, 31, 0.9);
+  --bg-dark: #1B231E;
+  --bg-card: rgba(38, 48, 41, 0.75);
+  --bg-card-hover: rgba(48, 60, 51, 0.9);
   --green-primary: #22C55E;
   --green-dark: #15803D;
   --green-glow: rgba(34, 197, 94, 0.25);
@@ -15,8 +15,8 @@
   --text-sub: rgba(250, 252, 251, 0.45);
   --border-light: rgba(250, 252, 251, 0.1);
   --border-green: rgba(34, 197, 94, 0.3);
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
   --radius-lg: 16px;
   --radius-md: 10px;
   --radius-sm: 6px;
@@ -128,7 +128,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 16px 40px;
-  background: rgba(11, 15, 13, 0.85);
+  background: rgba(27, 35, 30, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-light);
@@ -297,7 +297,7 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(11, 15, 13, 0.85);
+  background: rgba(27, 35, 30, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-green);
   color: var(--text-main);
@@ -334,38 +334,6 @@ button {
   .hero-chip { display: none; }
 }
 
-/* Ambient floating food emoji for extra life in the hero */
-.hero-floaties {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.floaty {
-  position: absolute;
-  font-size: 2rem;
-  opacity: 0.35;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.4));
-  animation: floatDrift 7s ease-in-out infinite;
-}
-
-.floaty.f1 { top: 14%; left: 6%;  font-size: 2.4rem; animation-delay: 0s; }
-.floaty.f2 { top: 68%; left: 10%; font-size: 1.8rem; animation-delay: 1.2s; }
-.floaty.f3 { top: 20%; left: 92%; font-size: 2.1rem; animation-delay: 0.6s; }
-.floaty.f4 { top: 75%; left: 88%; font-size: 1.7rem; animation-delay: 2s; }
-.floaty.f5 { top: 46%; left: 3%;  font-size: 1.5rem; animation-delay: 3s; }
-
-@keyframes floatDrift {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-22px) rotate(8deg); }
-}
-
-@media (max-width: 900px) {
-  .hero-floaties { display: none; }
-}
-
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -380,10 +348,6 @@ button {
 
 .hero-content .hero-sub {
   margin-left: 0;
-}
-
-.hero-content .impact-stats {
-  margin: 0;
 }
 
 .hero-badge {
@@ -484,6 +448,10 @@ button {
 /* ============================================================
    SUSTAINABILITY / CARBON OFFSET IMPACT STRIP
    ============================================================ */
+.impact-strip {
+  padding: 0 40px 36px;
+}
+
 .impact-stats {
   display: flex;
   align-items: stretch;
@@ -493,7 +461,7 @@ button {
   padding: 22px 10px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-green);
-  background: rgba(8, 12, 10, 0.82);
+  background: rgba(24, 32, 27, 0.82);
   backdrop-filter: blur(10px);
   animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: 0.35s;
@@ -580,7 +548,7 @@ button {
 
 .search-input {
   width: 100%;
-  background: rgba(18, 24, 21, 0.8);
+  background: rgba(38, 48, 41, 0.8);
   border: 1px solid var(--border-light);
   border-radius: 12px;
   padding: 14px 44px 14px 48px;
@@ -748,7 +716,7 @@ button {
   position: relative;
   height: 200px;
   overflow: hidden;
-  background: #18221c;
+  background: #26302a;
 }
 
 .card-img-wrap::after {
@@ -774,7 +742,7 @@ button {
   position: absolute;
   top: 14px;
   left: 14px;
-  background: rgba(11, 15, 13, 0.85);
+  background: rgba(27, 35, 30, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-green);
   color: var(--green-primary);
@@ -790,7 +758,7 @@ button {
   position: absolute;
   bottom: 14px;
   right: 14px;
-  background: rgba(11, 15, 13, 0.85);
+  background: rgba(27, 35, 30, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-light);
   color: var(--text-main);
@@ -1014,7 +982,7 @@ button {
   justify-content: space-between;
   padding: 18px 24px;
   border-bottom: 1px solid var(--border-light);
-  background: rgba(18, 24, 21, 0.95);
+  background: rgba(38, 48, 41, 0.95);
 }
 
 .modal-title-group {
@@ -1121,7 +1089,7 @@ button {
    ============================================================ */
 .footer {
   border-top: 1px solid var(--border-light);
-  background: rgba(11, 15, 13, 0.95);
+  background: rgba(27, 35, 30, 0.95);
   padding: 48px 40px;
   text-align: center;
 }
@@ -1182,9 +1150,6 @@ button {
     margin-left: auto;
     margin-right: auto;
   }
-  .hero-content .impact-stats {
-    margin: 0 auto;
-  }
 }
 
 /* Laptops & small desktops: tighten the outer gutters a touch */
@@ -1198,6 +1163,9 @@ button {
   .directory-container {
     padding: 0 32px 70px;
   }
+  .impact-strip {
+    padding: 0 32px 30px;
+  }
 }
 
 /* Medium tablets */
@@ -1210,6 +1178,9 @@ button {
   }
   .directory-container {
     padding: 0 24px 60px;
+  }
+  .impact-strip {
+    padding: 0 24px 26px;
   }
 }
 
@@ -1226,6 +1197,9 @@ button {
   }
   .directory-container {
     padding: 0 20px 60px;
+  }
+  .impact-strip {
+    padding: 0 20px 24px;
   }
 }
 
@@ -1349,6 +1323,20 @@ button {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-light);
   background: #111;
+}
+
+/* PDF catalog pages (e.g. Intermart) get a wider column and a taller
+   viewer so the embedded pages are actually legible. */
+.menu-page-wide {
+  max-width: 1200px;
+}
+
+.menu-page-wide .menu-page-pdf iframe {
+  height: 88vh;
+}
+
+@media (max-width: 900px) {
+  .menu-page-wide { max-width: 900px; }
 }
 
 @media (max-width: 640px) {
