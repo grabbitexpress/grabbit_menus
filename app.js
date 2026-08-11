@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="${item.coverImage}" alt="${item.name}" class="card-img" loading="lazy" />
           <span class="card-badge">${item.badge}</span>
           <span class="card-eta"><i class="fa-regular fa-clock"></i> ${item.eta}</span>
+          ${item.logo ? `<img src="${item.logo}" alt="${item.name} logo" class="card-logo" loading="lazy" />` : ''}
         </div>
         <div class="card-body">
           <div class="card-cat">${item.categoryLabel}</div>

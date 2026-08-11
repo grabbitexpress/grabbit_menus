@@ -15,6 +15,7 @@ const RESTAURANTS_DATA = [
   {
     id: "kfc-mahogany",
     name: "KFC Mahogany",
+    logo: "assets/logos/kfc.png",
     category: "fast-food",
     categoryLabel: "Fast Food",
     location: "Mahogany Shopping Promenade, Pamplemousses",
@@ -43,6 +44,7 @@ const RESTAURANTS_DATA = [
   {
     id: "intermart",
     name: "Intermart Express",
+    logo: "assets/logos/intermart.jpg",
     category: "groceries",
     categoryLabel: "Supermarket & Groceries",
     location: "Mahogany Shopping Promenade, Pamplemousses",
@@ -89,6 +91,7 @@ const RESTAURANTS_DATA = [
   {
     id: "sushi-park",
     name: "Sushi Park",
+    logo: "assets/logos/sushi-park.jpg",
     category: "asian",
     categoryLabel: "Asian & Sushi",
     location: "Mahogany Promenade, Pamplemousses",
@@ -143,6 +146,7 @@ const RESTAURANTS_DATA = [
   {
     id: "burgery",
     name: "Burgery",
+    logo: "assets/logos/burgery.jpg",
     category: "pizza-burgers",
     categoryLabel: "Gourmet Burgers",
     location: "Mahogany Promenade, Pamplemousses",
@@ -170,6 +174,7 @@ const RESTAURANTS_DATA = [
   {
     id: "takos",
     name: "Tacos",
+    logo: "assets/logos/tacos.jpg",
     category: "fast-food",
     categoryLabel: "Mexican & Tacos",
     location: "Pamplemousses",
@@ -249,6 +254,7 @@ const RESTAURANTS_DATA = [
   {
     id: "aromas-of-india",
     name: "Aromas of India",
+    logo: "assets/logos/aromas-of-india.jpg",
     category: "indian",
     categoryLabel: "Indian Cuisine",
     location: "Mahogany Promenade, Pamplemousses",
@@ -274,6 +280,7 @@ const RESTAURANTS_DATA = [
   },
   {
     id: "manjoo",
+    logo: "assets/logos/manjoo.jpg",
     name: "Manjoo",
     category: "retail",
     categoryLabel: "Home Décor & Household",
@@ -300,6 +307,7 @@ const RESTAURANTS_DATA = [
   {
     id: "artisan-coffee",
     name: "Artisan Coffee",
+    logo: "assets/logos/artisan-coffee.png",
     category: "cafe",
     categoryLabel: "Cafe & Bakery",
     location: "Mahogany Promenade, Pamplemousses",

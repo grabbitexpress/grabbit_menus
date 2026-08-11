@@ -135,6 +135,7 @@ module.exports = (req, res) => {
 
   <main class="menu-page">
     <div class="menu-page-head">
+      ${venue.logo ? `<img src="${escapeHtml(toAbsoluteUrl(venue.logo, baseUrl))}" alt="${escapeHtml(venue.name)} logo" class="menu-page-logo" />` : ''}
       <div class="menu-page-cat">${escapeHtml(venue.categoryLabel)}</div>
       <h1 class="menu-page-title">${escapeHtml(venue.name)}</h1>
       <p class="menu-page-tagline">${escapeHtml(venue.tagline)}</p>
