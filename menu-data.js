@@ -212,8 +212,11 @@ const RESTAURANTS_DATA = [
     location: "Mahogany Promenade, Pamplemousses",
     type: "images",
     images: [
-      "assets/photos/aromas-of-india/1.jpg",
-      "assets/photos/aromas-of-india/2.jpg"
+      { src: "assets/photos/aromas-of-india/1.jpg", caption: "Aromas of India Restaurant" },
+      { src: "assets/photos/aromas-of-india/2.jpg", caption: "Paneer Tikka Biryani" },
+      { src: "https://images.unsplash.com/photo-1767469576715-a4eb8bcfa204?auto=format&fit=crop&w=1200&q=80", caption: "Crispy Samosas" },
+      { src: "https://images.unsplash.com/photo-1666001120694-3ebe8fd207be?auto=format&fit=crop&w=1200&q=80", caption: "Paneer Tikka Skewers" },
+      { src: "https://images.unsplash.com/photo-1742281257687-092746ad6021?auto=format&fit=crop&w=1200&q=80", caption: "Traditional Indian Thali" }
     ],
     rating: 4.9,
     eta: "25-35 min",
