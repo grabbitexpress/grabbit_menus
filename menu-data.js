@@ -296,6 +296,7 @@ const RESTAURANTS_DATA = [
       "assets/photos/manjoo/2.jpg",
       "assets/photos/manjoo/4.jpg"
     ],
+    link: "https://manjoo.mu/",
     rating: 4.7,
     eta: "20-30 min",
     tagline: "Decor, Fragrances, Table & Kitchen Essentials for the Home",

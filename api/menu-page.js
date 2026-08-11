@@ -122,7 +122,7 @@ module.exports = (req, res) => {
 <body>
   <header class="navbar">
     <a href="/" class="nav-brand" style="text-decoration:none;">
-      <img src="/assets/logo.png" alt="Grabbit Express" class="brand-logo" />
+      <img src="/assets/logo.png?v=2" alt="Grabbit Express" class="brand-logo" />
       <span class="brand-tag">Pamplemousses Menu Hub</span>
     </a>
     <div class="nav-actions">
@@ -156,7 +156,7 @@ module.exports = (req, res) => {
 
   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-brand"><img src="/assets/logo.png" alt="Grabbit Express" class="footer-logo" /></div>
+      <div class="footer-brand"><img src="/assets/logo.png?v=2" alt="Grabbit Express" class="footer-logo" /></div>
       <a href="mailto:support@grabbit-express.com" class="footer-email">
         <i class="fa-solid fa-envelope"></i><span>Questions or enquiries? support@grabbit-express.com</span>
       </a>
