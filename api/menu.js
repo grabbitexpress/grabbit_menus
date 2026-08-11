@@ -32,7 +32,7 @@ function imageEntryFor(img, baseUrl) {
 }
 
 function orderWhatsappUrlFor(venue) {
-  const text = `Hi, my name is [Your Name]. I would love to order from ${venue.name} (${venue.location}). Thank you!`;
+  const text = `Hi Grabbit Express. I would love to order [ ] from ${venue.name} (${venue.location}). Thank you!`;
   return `https://wa.me/${GRABBIT_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 

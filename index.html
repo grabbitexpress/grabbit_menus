@@ -43,6 +43,18 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
+    <!-- Full-bleed food photo mosaic background -->
+    <div class="hero-mosaic" aria-hidden="true">
+      <img src="assets/photos/kfc-mahogany/2.png" alt="" class="mo-a" loading="eager" />
+      <img src="https://images.unsplash.com/photo-1727280376746-b89107a5b0df?auto=format&fit=crop&w=900&q=80" alt="" class="mo-b" loading="eager" />
+      <img src="https://images.unsplash.com/photo-1692737580547-b45bb4a02356?auto=format&fit=crop&w=900&q=80" alt="" class="mo-c" loading="eager" />
+      <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=900&q=80" alt="" class="mo-d" loading="eager" />
+      <img src="https://images.unsplash.com/photo-1618449840665-9ed506d73a34?auto=format&fit=crop&w=900&q=80" alt="" class="mo-e" loading="eager" />
+      <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=900&q=80" alt="" class="mo-f" loading="eager" />
+      <img src="https://images.unsplash.com/photo-1767489386700-cb3dbcbab13d?auto=format&fit=crop&w=900&q=80" alt="" class="mo-g" loading="eager" />
+      <img src="https://images.unsplash.com/photo-1763994685090-c0927ff195d1?auto=format&fit=crop&w=900&q=80" alt="" class="mo-h" loading="eager" />
+    </div>
+
     <!-- floating decorative food emoji for ambient motion -->
     <div class="hero-floaties" aria-hidden="true">
       <span class="floaty f1">🍕</span>
@@ -50,6 +62,15 @@
       <span class="floaty f3">🍣</span>
       <span class="floaty f4">🥡</span>
       <span class="floaty f5">🍜</span>
+    </div>
+
+    <div class="hero-chip chip-rating">
+      <i class="fa-solid fa-star"></i>
+      <span>4.8 Avg Rating</span>
+    </div>
+    <div class="hero-chip chip-speed">
+      <i class="fa-solid fa-bolt"></i>
+      <span>15-25 min Delivery</span>
     </div>
 
     <div class="hero-inner">
@@ -84,24 +105,6 @@
           </div>
         </div>
       </div>
-
-      <div class="hero-visual">
-        <div class="hero-visual-glow" aria-hidden="true"></div>
-        <div class="hero-bento" aria-hidden="true">
-          <img src="assets/photos/pappagallo-pizza/2.jpg" alt="" class="bento-a" loading="eager" />
-          <img src="assets/photos/sushi-park/3.webp" alt="" class="bento-b" loading="eager" />
-          <img src="assets/photos/kfc-mahogany/2.png" alt="" class="bento-c" loading="eager" />
-          <img src="assets/photos/aromas-of-india/3.jpg" alt="" class="bento-d" loading="eager" />
-        </div>
-        <div class="hero-chip chip-rating">
-          <i class="fa-solid fa-star"></i>
-          <span>4.8 Avg Rating</span>
-        </div>
-        <div class="hero-chip chip-speed">
-          <i class="fa-solid fa-bolt"></i>
-          <span>15-25 min Delivery</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -129,56 +132,6 @@
     </div>
   </main>
 
-  <!-- LIGHTBOX IMAGE GALLERY MODAL -->
-  <div class="modal-overlay" id="imageModal">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <i class="fa-solid fa-images" style="color: var(--green-primary);"></i>
-          <span class="modal-venue-name" id="lightboxVenueName">Menu Gallery</span>
-          <span id="lightboxCounter" style="font-size:0.85rem; color:var(--text-sub); margin-left:10px;">1 / 1</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <button class="btn-ghost" id="zoomInBtn" style="padding:6px 12px;" title="Zoom In"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-          <button class="btn-ghost" id="zoomOutBtn" style="padding:6px 12px;" title="Zoom Out"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
-          <button class="modal-close-btn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-      </div>
-      <div class="modal-body">
-        <div class="lightbox-stage" id="lightboxStage">
-          <button class="lightbox-nav-btn prev" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
-          <img src="" alt="Menu Page" class="lightbox-img" id="lightboxImg" />
-          <button class="lightbox-nav-btn next" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
-          <div class="lightbox-caption" id="lightboxCaption"></div>
-        </div>
-        <div class="lightbox-thumbs" id="lightboxThumbs"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PDF VIEWER MODAL -->
-  <div class="modal-overlay" id="pdfModal">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <i class="fa-solid fa-file-pdf" style="color: var(--green-primary);"></i>
-          <span class="modal-venue-name" id="pdfVenueName">Intermart Catalog</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:10px;">
-          <a href="#" id="pdfDownloadBtn" download class="btn-ghost" style="padding:6px 14px; font-size:0.85rem;">
-            <i class="fa-solid fa-download"></i> Download PDF
-          </a>
-          <button class="modal-close-btn" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-      </div>
-      <div class="modal-body" style="padding: 16px;">
-        <div class="pdf-container">
-          <iframe id="pdfFrame" src="" title="PDF Menu Viewer"></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- ORDER MODAL -->
   <div class="modal-overlay" id="orderModal">
     <div class="modal-container" style="max-width: 480px;">
@@ -199,14 +152,6 @@
             </span>
             <i class="fa-solid fa-chevron-right"></i>
           </a>
-          
-          <a href="#" id="orderCallBtn" class="order-opt-btn">
-            <span style="display:flex; align-items:center; gap:10px;">
-              <i class="fa-solid fa-phone" style="color:var(--green-primary); font-size:1.2rem;"></i>
-              <span>Call Grabbit Dispatch</span>
-            </span>
-            <i class="fa-solid fa-chevron-right"></i>
-          </a>
         </div>
       </div>
     </div>
@@ -219,14 +164,13 @@
         <img src="assets/logo.png" alt="Grabbit Express" class="footer-logo" />
       </div>
       <p class="footer-text">
-        Fast, reliable delivery across Mauritius — Lunch, groceries, shopping & parcels.
-      </p>
+        Fast, reliable delivery across Mauritius      </p>
       <a href="mailto:support@grabbit-express.com" class="footer-email">
         <i class="fa-solid fa-envelope"></i>
         <span>Questions or enquiries? support@grabbit-express.com</span>
       </a>
       <div class="footer-copy">
-        &copy; 2026 Grabbit Express • Pamplemousses Menu Directory     </div>
+        &copy; 2026 Grabbit Express   </div>
     </div>
   </footer>
 

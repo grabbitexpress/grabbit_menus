@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // State management
   let activeCategory = 'all';
   let searchQuery = '';
-  let activeLightboxImages = [];
-  let currentImageIndex = 0;
 
   // DOM Elements
   const categoriesBar = document.getElementById('categoriesBar');
@@ -38,34 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const searchClear = document.getElementById('searchClear');
 
-  // Modal Elements
-  const imageModal = document.getElementById('imageModal');
-  const pdfModal = document.getElementById('pdfModal');
-  const orderModal = document.getElementById('orderModal');
-  
-  // Lightbox Controls
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxVenueName = document.getElementById('lightboxVenueName');
-  const lightboxCounter = document.getElementById('lightboxCounter');
-  const lightboxCaption = document.getElementById('lightboxCaption');
-  const lightboxStage = document.getElementById('lightboxStage');
-  const lightboxThumbs = document.getElementById('lightboxThumbs');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const zoomInBtn = document.getElementById('zoomInBtn');
-  const zoomOutBtn = document.getElementById('zoomOutBtn');
-
-  // PDF Modal Controls
-  const pdfFrame = document.getElementById('pdfFrame');
-  const pdfVenueName = document.getElementById('pdfVenueName');
-  const pdfDownloadBtn = document.getElementById('pdfDownloadBtn');
-
   // Order Modal Controls
+  const orderModal = document.getElementById('orderModal');
   const orderVenueName = document.getElementById('orderVenueName');
   const orderWhatsappBtn = document.getElementById('orderWhatsappBtn');
-  const orderCallBtn = document.getElementById('orderCallBtn');
-
-  let currentZoom = 1;
 
   // Initial setup
   renderCategoryPills();
@@ -93,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filtered = RESTAURANTS_DATA.filter(item => {
       const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
-      const matchesSearch = searchQuery === '' || 
+      const matchesSearch = searchQuery === '' ||
         item.name.toLowerCase().includes(searchQuery) ||
         item.tagline.toLowerCase().includes(searchQuery) ||
         item.categoryLabel.toLowerCase().includes(searchQuery) ||
@@ -135,15 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>${item.location}</span>
           </div>
           <div class="card-actions ${hasLiveMenu ? 'card-actions-triple' : ''}">
-            <button class="btn-card-menu" onclick="handleViewMenu('${item.id}')">
+            <a class="btn-card-menu" href="/menu/${item.id}">
               <i class="fa-solid ${getMenuBtnIcon(item.type)}"></i>
               <span>${getMenuBtnText(item.type)}</span>
-            </button>
+            </a>
             ${hasLiveMenu ? `
-            <button class="btn-card-order" onclick="window.open('${item.link}', '_blank')" title="View live ${item.name} menu">
+            <a class="btn-card-order" href="${item.link}" target="_blank" title="View live ${item.name} menu">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
               <span>Live Menu</span>
-            </button>` : ''}
+            </a>` : ''}
             <button class="btn-card-order" onclick="handleOrderModal('${item.id}')">
               <i class="fa-brands fa-whatsapp"></i>
               <span>Order</span>
@@ -202,46 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Lightbox navigation
-    if (prevBtn) prevBtn.addEventListener('click', navigatePrev);
-    if (nextBtn) nextBtn.addEventListener('click', navigateNext);
-
-    // Swipe navigation (touch devices)
-    if (lightboxStage) {
-      let touchStartX = 0;
-      let touchStartY = 0;
-
-      lightboxStage.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].clientX;
-        touchStartY = e.changedTouches[0].clientY;
-      }, { passive: true });
-
-      lightboxStage.addEventListener('touchend', (e) => {
-        const deltaX = e.changedTouches[0].clientX - touchStartX;
-        const deltaY = e.changedTouches[0].clientY - touchStartY;
-        const SWIPE_THRESHOLD = 40;
-        if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
-          if (deltaX < 0) navigateNext();
-          else navigatePrev();
-        }
-      }, { passive: true });
-    }
-
-    // Zoom controls
-    if (zoomInBtn) {
-      zoomInBtn.addEventListener('click', () => {
-        currentZoom = Math.min(currentZoom + 0.25, 2.5);
-        applyZoom();
-      });
-    }
-    if (zoomOutBtn) {
-      zoomOutBtn.addEventListener('click', () => {
-        currentZoom = Math.max(currentZoom - 0.25, 1);
-        applyZoom();
-      });
-    }
-
-    // Close modals on close button or backdrop click
+    // Close order modal on close button or backdrop click
     document.querySelectorAll('.modal-close-btn, .modal-overlay').forEach(el => {
       el.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal-overlay') || e.target.closest('.modal-close-btn')) {
@@ -250,124 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Keyboard support (Escape to close, Arrows for gallery)
+    // Keyboard support (Escape to close order modal)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeAllModals();
-      if (imageModal && imageModal.classList.contains('active')) {
-        if (e.key === 'ArrowLeft') navigatePrev();
-        if (e.key === 'ArrowRight') navigateNext();
-      }
     });
-  }
-
-  /**
-   * Handle Menu Click Action
-   */
-  window.handleViewMenu = function(id) {
-    const venue = RESTAURANTS_DATA.find(r => r.id === id);
-    if (!venue) return;
-
-    if (venue.type === 'link') {
-      window.open(venue.link, '_blank');
-    } else if (venue.type === 'pdf') {
-      openPdfModal(venue);
-    } else if (venue.type === 'images') {
-      openImageModal(venue);
-    }
-  };
-
-  /**
-   * Open Image Lightbox Gallery
-   */
-  function openImageModal(venue) {
-    activeLightboxImages = venue.images || [];
-    currentImageIndex = 0;
-    currentZoom = 1;
-    
-    if (lightboxVenueName) lightboxVenueName.textContent = venue.name;
-    updateLightboxStage();
-    renderLightboxThumbs();
-
-    imageModal.classList.add('active');
-  }
-
-  // Image entries may be a plain path string, or { src, caption } to label the dish
-  function getImageSrc(img) {
-    return typeof img === 'string' ? img : img.src;
-  }
-
-  function getImageCaption(img) {
-    return typeof img === 'string' ? '' : (img.caption || '');
-  }
-
-  function updateLightboxStage() {
-    if (!activeLightboxImages.length) return;
-    const current = activeLightboxImages[currentImageIndex];
-    lightboxImg.src = getImageSrc(current);
-    if (lightboxCounter) {
-      lightboxCounter.textContent = `${currentImageIndex + 1} / ${activeLightboxImages.length}`;
-    }
-    if (lightboxCaption) {
-      const caption = getImageCaption(current);
-      lightboxCaption.textContent = caption;
-      lightboxCaption.style.display = caption ? 'block' : 'none';
-    }
-    applyZoom();
-    updateThumbActiveState();
-  }
-
-  function renderLightboxThumbs() {
-    if (!lightboxThumbs) return;
-    lightboxThumbs.innerHTML = activeLightboxImages.map((img, idx) => `
-      <div class="thumb-item ${idx === currentImageIndex ? 'active' : ''}" onclick="selectThumb(${idx})">
-        <img src="${getImageSrc(img)}" alt="${getImageCaption(img) || `Menu Page ${idx + 1}`}" />
-      </div>
-    `).join('');
-  }
-
-  window.selectThumb = function(idx) {
-    currentImageIndex = idx;
-    currentZoom = 1;
-    updateLightboxStage();
-  };
-
-  function updateThumbActiveState() {
-    const thumbs = lightboxThumbs.querySelectorAll('.thumb-item');
-    thumbs.forEach((t, idx) => {
-      t.classList.toggle('active', idx === currentImageIndex);
-    });
-  }
-
-  function navigatePrev() {
-    if (currentImageIndex > 0) {
-      currentImageIndex--;
-      currentZoom = 1;
-      updateLightboxStage();
-    }
-  }
-
-  function navigateNext() {
-    if (currentImageIndex < activeLightboxImages.length - 1) {
-      currentImageIndex++;
-      currentZoom = 1;
-      updateLightboxStage();
-    }
-  }
-
-  function applyZoom() {
-    if (lightboxImg) {
-      lightboxImg.style.transform = `scale(${currentZoom})`;
-    }
-  }
-
-  /**
-   * Open PDF Modal Viewer
-   */
-  function openPdfModal(venue) {
-    if (pdfVenueName) pdfVenueName.textContent = venue.name;
-    if (pdfFrame) pdfFrame.src = venue.pdfUrl;
-    if (pdfDownloadBtn) pdfDownloadBtn.href = venue.pdfUrl;
-    pdfModal.classList.add('active');
   }
 
   /**
@@ -378,14 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!venue) return;
 
     if (orderVenueName) orderVenueName.textContent = `Order from ${venue.name}`;
-    
+
     // Prepare WhatsApp message
-    const msg = encodeURIComponent(`Hi, my name is [Your Name]. I would love to order from ${venue.name} (${venue.location}). Thank you!`);
+    const msg = encodeURIComponent(`Hi Grabbit Express. I would love to order [ ] from ${venue.name} (${venue.location}). Thank you!`);
     if (orderWhatsappBtn) {
       orderWhatsappBtn.href = `https://wa.me/${GRABBIT_WHATSAPP_NUMBER}?text=${msg}`;
-    }
-    if (orderCallBtn) {
-      orderCallBtn.href = `tel:+${GRABBIT_WHATSAPP_NUMBER}`;
     }
 
     orderModal.classList.add('active');

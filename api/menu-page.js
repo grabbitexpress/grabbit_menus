@@ -88,7 +88,7 @@ module.exports = (req, res) => {
   const coverImage = toAbsoluteUrl(venue.coverImage, baseUrl);
   const pageUrl = `${baseUrl}menu/${venue.id}`;
   const waMsg = encodeURIComponent(
-    `Hi, my name is [Your Name]. I would love to order from ${venue.name} (${venue.location}). Thank you!`
+    `Hi Grabbit Express. I would love to order [ ] from ${venue.name} (${venue.location}). Thank you!`
   );
   const orderWhatsappUrl = `https://wa.me/${GRABBIT_WHATSAPP_NUMBER}?text=${waMsg}`;
 
