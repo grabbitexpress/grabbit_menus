@@ -289,7 +289,7 @@ const CATEGORIES = [
 
 const GRABBIT_WHATSAPP_NUMBER = "23055198540";
 
-const WHATSAPP_INTRO = `Hey there! Welcome to Grabbit Express, Mauritius' first 100% electric on-demand delivery service. What would you like to order? We're happy to grab it for you!`;
+const WHATSAPP_INTRO = `Hi, my name is [Your Name]. I would love to place an order. Thank you!`;
 
 // Node/serverless consumers (e.g. api/menu.js) can `require()` this file;
 // browsers loading it via <script> ignore this block since `module` is undefined there.

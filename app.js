@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (orderVenueName) orderVenueName.textContent = `Order from ${venue.name}`;
     
     // Prepare WhatsApp message
-    const msg = encodeURIComponent(`${WHATSAPP_INTRO}\n\nI'd like to order from ${venue.name} (${venue.location}).`);
+    const msg = encodeURIComponent(`Hi, my name is [Your Name]. I would love to order from ${venue.name} (${venue.location}). Thank you!`);
     if (orderWhatsappBtn) {
       orderWhatsappBtn.href = `https://wa.me/${GRABBIT_WHATSAPP_NUMBER}?text=${msg}`;
     }

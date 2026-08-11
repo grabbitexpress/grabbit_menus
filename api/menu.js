@@ -11,7 +11,7 @@
  *   ?id=<venueId>                   -> return a single venue by id
  */
 
-const { RESTAURANTS_DATA, CATEGORIES, GRABBIT_WHATSAPP_NUMBER, WHATSAPP_INTRO } = require("../menu-data.js");
+const { RESTAURANTS_DATA, CATEGORIES, GRABBIT_WHATSAPP_NUMBER } = require("../menu-data.js");
 
 function toAbsoluteUrl(path, baseUrl) {
   if (!path) return null;
@@ -20,13 +20,19 @@ function toAbsoluteUrl(path, baseUrl) {
 }
 
 function menuUrlFor(venue, baseUrl) {
-  if (venue.type === "link") return venue.link;
-  if (venue.type === "pdf") return toAbsoluteUrl(venue.pdfUrl, baseUrl);
-  return null; // "images" type venues have no separate menu page — see `images`
+  // Every venue gets a real, shareable, non-popup page at /menu/:id
+  // (see api/menu-page.js) — safe to link directly from a WhatsApp agent.
+  return new URL(`menu/${venue.id}`, baseUrl).toString();
+}
+
+function imageEntryFor(img, baseUrl) {
+  const src = typeof img === "string" ? img : img.src;
+  const caption = typeof img === "string" ? null : (img.caption || null);
+  return { url: toAbsoluteUrl(src, baseUrl), caption };
 }
 
 function orderWhatsappUrlFor(venue) {
-  const text = `${WHATSAPP_INTRO}\n\nI'd like to order from ${venue.name} (${venue.location}).`;
+  const text = `Hi, my name is [Your Name]. I would love to order from ${venue.name} (${venue.location}). Thank you!`;
   return `https://wa.me/${GRABBIT_WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
@@ -43,9 +49,10 @@ function buildVenue(venue, baseUrl) {
     etaMinutes: venue.eta,
     badge: venue.badge,
     imageUrl: toAbsoluteUrl(venue.coverImage, baseUrl),
-    images: (venue.images || []).map((img) => toAbsoluteUrl(img, baseUrl)),
+    images: (venue.images || []).map((img) => imageEntryFor(img, baseUrl)),
     menuType: venue.type,
     menuUrl: menuUrlFor(venue, baseUrl),
+    liveMenuUrl: venue.link || null,
     orderWhatsappUrl: orderWhatsappUrlFor(venue),
     orderPhone: venue.phone,
     siteUrl: baseUrl,
@@ -64,7 +71,10 @@ function toMarkdown(venues, business) {
     lines.push("");
     if (v.description) lines.push(v.description, "");
     if (v.menuUrl) lines.push(`- Menu: ${v.menuUrl}`);
-    if (v.images.length) lines.push(`- Photos: ${v.images.join(", ")}`);
+    if (v.liveMenuUrl) lines.push(`- Live Menu: ${v.liveMenuUrl}`);
+    if (v.images.length) {
+      lines.push(`- Photos: ${v.images.map((img) => img.caption ? `${img.url} (${img.caption})` : img.url).join(", ")}`);
+    }
     lines.push(`- Order via WhatsApp: ${v.orderWhatsappUrl}`);
     lines.push(`- Phone: ${v.orderPhone}`);
     lines.push("", "---", "");
