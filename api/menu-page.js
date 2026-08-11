@@ -122,11 +122,8 @@ module.exports = (req, res) => {
 <body>
   <header class="navbar">
     <a href="/" class="nav-brand" style="text-decoration:none;">
-      <img src="/assets/logo.png" alt="Grabbit Express Logo" class="brand-logo" />
-      <div class="brand-text">
-        <div class="brand-title">Grabbit<span>.</span></div>
-        <span class="brand-tag">Pamplemousses Menu Hub</span>
-      </div>
+      <img src="/assets/logo.png" alt="Grabbit Express" class="brand-logo" />
+      <span class="brand-tag">Pamplemousses Menu Hub</span>
     </a>
     <div class="nav-actions">
       <a href="/" class="btn-ghost"><i class="fa-solid fa-arrow-left"></i><span>All Venues</span></a>

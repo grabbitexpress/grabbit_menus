@@ -141,42 +141,41 @@ button {
 }
 
 .brand-logo {
-  height: 42px;
+  height: 34px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(34, 197, 94, 0.3));
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--text-main);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.brand-title span {
-  color: var(--green-primary);
 }
 
 .brand-tag {
   font-size: 0.75rem;
   color: var(--text-sub);
   font-weight: 500;
+  padding-left: 14px;
+  border-left: 1px solid var(--border-light);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+/* Medium tablets */
+@media (max-width: 1024px) {
+  .navbar { padding: 14px 24px; }
+}
+
+/* Mobile phones: trim the brand tagline and collapse the secondary
+   button to an icon so both actions fit next to the logo. */
+@media (max-width: 640px) {
+  .brand-tag { display: none; }
+  .brand-logo { height: 28px; }
+  .nav-actions { gap: 8px; }
+  .btn-ghost span,
+  .btn-main span { display: none; }
+  .btn-ghost,
+  .btn-main { padding: 10px 12px; }
 }
 
 .btn-main {
@@ -694,8 +693,24 @@ button {
 
 .restaurants-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* desktop & laptop: 3 columns */
   gap: 28px;
+}
+
+/* Medium tablets & small laptops (iPad portrait/landscape, 13" split-screen, etc.) */
+@media (max-width: 1180px) {
+  .restaurants-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 640px) {
+  .restaurants-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 }
 
 .card {
@@ -927,6 +942,23 @@ button {
   font-size: 0.85rem;
 }
 
+/* Small phones: three side-by-side buttons get too cramped, so stack them */
+@media (max-width: 420px) {
+  .card-actions-triple {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .card-actions-triple .btn-card-menu,
+  .card-actions-triple .btn-card-order {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+  .card-actions-triple .btn-card-menu i,
+  .card-actions-triple .btn-card-order i {
+    font-size: 0.95rem;
+  }
+}
+
 /* ============================================================
    MODALS & LIGHTBOX
    ============================================================ */
@@ -1155,6 +1187,33 @@ button {
   }
 }
 
+/* Laptops & small desktops: tighten the outer gutters a touch */
+@media (max-width: 1300px) {
+  .hero-inner {
+    padding: 90px 32px 50px;
+  }
+  .controls-wrap {
+    padding: 0 32px;
+  }
+  .directory-container {
+    padding: 0 32px 70px;
+  }
+}
+
+/* Medium tablets */
+@media (max-width: 1024px) {
+  .hero-inner {
+    padding: 70px 24px 40px;
+  }
+  .controls-wrap {
+    padding: 0 24px;
+  }
+  .directory-container {
+    padding: 0 24px 60px;
+  }
+}
+
+/* Mobile phones */
 @media (max-width: 768px) {
   .navbar {
     padding: 14px 20px;
@@ -1167,9 +1226,6 @@ button {
   }
   .directory-container {
     padding: 0 20px 60px;
-  }
-  .restaurants-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -1298,4 +1354,7 @@ button {
 @media (max-width: 640px) {
   .menu-page { padding: 36px 16px 60px; }
   .menu-page-meta { gap: 12px; font-size: 0.82rem; }
+  .modal-overlay { padding: 12px; }
+  .modal-header { padding: 14px 18px; }
+  .modal-body { padding: 20px 18px; }
 }
