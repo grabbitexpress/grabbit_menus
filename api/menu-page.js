@@ -166,6 +166,9 @@ module.exports = (req, res) => {
         <a href="https://www.instagram.com/grabbit_express" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Grabbit Express on Instagram">
           <i class="fa-brands fa-instagram"></i>
         </a>
+        <a href="mailto:support@grabbit-express.com" class="footer-social-btn" aria-label="Email Grabbit Express">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
       </div>
 
       <a href="mailto:support@grabbit-express.com" class="footer-email">

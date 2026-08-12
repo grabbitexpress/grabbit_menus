@@ -1108,11 +1108,12 @@ button {
    FOOTER
    ============================================================ */
 .footer {
-  /* Blends from the page's dark background into a light panel, so the
-     footer reads as a deliberate, brighter "bookend" rather than more
-     of the same dark surface. */
-  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--green-light) 130px, var(--green-light) 100%);
-  padding: 64px 40px 40px;
+  /* A flat, light "bookend" panel — crisp edge against the dark page
+     above rather than a soft gradient, so text stays sharp and legible
+     throughout instead of crossing a blurry-looking transition band. */
+  background: var(--green-light);
+  border-top: 4px solid var(--green-primary);
+  padding: 48px 40px 40px;
   text-align: center;
 }
 
@@ -1137,7 +1138,7 @@ button {
 
 .footer-text {
   font-size: 0.875rem;
-  color: rgba(11, 15, 13, 0.6);
+  color: rgba(11, 15, 13, 0.78);
 }
 
 .footer-social {
@@ -1184,7 +1185,7 @@ button {
 
 .footer-copy {
   font-size: 0.8rem;
-  color: rgba(11, 15, 13, 0.45);
+  color: rgba(11, 15, 13, 0.6);
   margin-top: 10px;
 }
 
