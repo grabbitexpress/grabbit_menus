@@ -1168,21 +1168,6 @@ button {
   transform: translateY(-2px);
 }
 
-.footer-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--green-dark);
-  transition: var(--transition);
-}
-
-.footer-email:hover {
-  color: var(--green-primary);
-  text-decoration: underline;
-}
-
 .footer-copy {
   font-size: 0.8rem;
   color: rgba(11, 15, 13, 0.6);

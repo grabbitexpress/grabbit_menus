@@ -171,9 +171,6 @@ module.exports = (req, res) => {
         </a>
       </div>
 
-      <a href="mailto:support@grabbit-express.com" class="footer-email">
-        <i class="fa-solid fa-envelope"></i><span>Questions or enquiries? support@grabbit-express.com</span>
-      </a>
       <div class="footer-copy">&copy; 2026 Grabbit Express • Pamplemousses Menu Directory</div>
     </div>
   </footer>
