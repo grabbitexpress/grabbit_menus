@@ -1108,9 +1108,11 @@ button {
    FOOTER
    ============================================================ */
 .footer {
-  border-top: 1px solid var(--border-light);
-  background: rgba(27, 35, 30, 0.95);
-  padding: 48px 40px;
+  /* Blends from the page's dark background into a light panel, so the
+     footer reads as a deliberate, brighter "bookend" rather than more
+     of the same dark surface. */
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--green-light) 130px, var(--green-light) 100%);
+  padding: 64px 40px 40px;
   text-align: center;
 }
 
@@ -1120,7 +1122,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
 }
 
 .footer-brand {
@@ -1135,7 +1137,34 @@ button {
 
 .footer-text {
   font-size: 0.875rem;
-  color: var(--text-sub);
+  color: rgba(11, 15, 13, 0.6);
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 15, 13, 0.06);
+  border: 1px solid rgba(11, 15, 13, 0.12);
+  color: var(--green-dark);
+  font-size: 1.05rem;
+  transition: var(--transition);
+}
+
+.footer-social-btn:hover {
+  background: var(--green-primary);
+  border-color: var(--green-primary);
+  color: #000;
+  transform: translateY(-2px);
 }
 
 .footer-email {
@@ -1144,18 +1173,18 @@ button {
   gap: 8px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--green-primary);
+  color: var(--green-dark);
   transition: var(--transition);
 }
 
 .footer-email:hover {
-  color: #4ADE80;
+  color: var(--green-primary);
   text-decoration: underline;
 }
 
 .footer-copy {
   font-size: 0.8rem;
-  color: var(--text-sub);
+  color: rgba(11, 15, 13, 0.45);
   margin-top: 10px;
 }
 
