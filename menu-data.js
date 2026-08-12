@@ -126,12 +126,10 @@ const RESTAURANTS_DATA = [
     images: [
       "assets/photos/pappagallo-pizza/1.jpg",
       "assets/photos/pappagallo-pizza/2.jpg",
-      "assets/photos/pappagallo-pizza/3.jpg",
       "assets/photos/pappagallo-pizza/4.jpg",
       { src: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=1200&q=80", caption: "Fresh Basil Pizza" },
-      { src: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=1200&q=80", caption: "Pepperoni Pizza Slice" },
+      { src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80", caption: "BBQ Chicken Pizza" },
       { src: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=1200&q=80", caption: "Cheese & Tomato Pizza" },
-      { src: "https://images.unsplash.com/photo-1692737580547-b45bb4a02356?auto=format&fit=crop&w=1200&q=80", caption: "Wood-Fired Pepperoni Pizza" },
       { src: "https://images.unsplash.com/photo-1619535860434-ba1d8fa12536?auto=format&fit=crop&w=1200&q=80", caption: "Garlic Bread" },
       { src: "https://images.unsplash.com/photo-1724116379273-ba32b70d112c?auto=format&fit=crop&w=1200&q=80", caption: "Tiramisu" }
     ],
