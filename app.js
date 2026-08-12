@@ -25,6 +25,49 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(tick);
   });
 
+  // Typewriter effect cycling through hero taglines
+  const heroTypewriter = document.getElementById('heroTypewriter');
+  if (heroTypewriter && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const phrases = [
+      'Grabbed & Delivered Fast.',
+      'Hot, Fresh & On Time.',
+      'From Kitchen To Your Door.',
+      'Ordered In Seconds.'
+    ];
+    const TYPE_MS = 55;
+    const DELETE_MS = 30;
+    const HOLD_MS = 2000;
+    const GAP_MS = 400;
+    let phraseIndex = 0;
+    let charIndex = phrases[0].length;
+
+    heroTypewriter.classList.add('typing');
+
+    function step() {
+      const phrase = phrases[phraseIndex];
+      const deleting = step.deleting;
+
+      if (!deleting && charIndex < phrase.length) {
+        charIndex++;
+        heroTypewriter.textContent = phrase.slice(0, charIndex);
+        setTimeout(step, TYPE_MS);
+      } else if (!deleting && charIndex === phrase.length) {
+        step.deleting = true;
+        setTimeout(step, HOLD_MS);
+      } else if (deleting && charIndex > 0) {
+        charIndex--;
+        heroTypewriter.textContent = phrase.slice(0, charIndex);
+        setTimeout(step, DELETE_MS);
+      } else {
+        step.deleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(step, GAP_MS);
+      }
+    }
+    step.deleting = true;
+    setTimeout(step, HOLD_MS);
+  }
+
   // State management
   let activeCategory = 'all';
   let searchQuery = '';
